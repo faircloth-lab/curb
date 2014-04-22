@@ -1,0 +1,45 @@
+orders:
+    clupeiforms:
+        -thryssa_hamiltonii2
+        -chirocentrus_dorab2
+        -dorosoma_pentense
+    gonorynchiforms:
+        -gonorynchus_sp2
+        -chanos_chanos2
+        -parakneria_abbreviata
+    cypriniforms:
+        - moxostoma_poecilurum
+        - puntiopiles_falcifer2
+        - danrer7
+        - cyrpinella_venusta
+    gymnotiforms:
+        - apteronotus_albifrons
+        - sternopygus_macrurus
+        - brachyhypopomus_occidentalis3
+        - gymnotus_carapo
+        - gymnotus_cylindricus
+    characiforms_clade_A:
+        - citharinus_gibbosus
+        -xenocharax_crassus
+        -nannaethiops_unitaeniatus
+        -distichodus_hypostomatus
+        -distichodus_maculatus
+    characiforms_cladeB:
+        -ctenolucius_beani
+        -astynax_aeneus
+        -hoplias_microlepis
+        -hepsetus_odoe2
+        -brycinus_macrolepidotus
+        -bryconaethiops_yseuxi
+    siluriforms:
+        -hyostomus_panamensis
+        -ameirus_natalis2
+        -pangasius_cfpangasius2
+        -plotosus_lineatus
+        -arius_felis
+        -auchenoglanis_occidentalis
+        -malapterurus_stiassnyae
+        -synodontis_filamentosus
+
+
+

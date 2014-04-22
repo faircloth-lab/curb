@@ -30,7 +30,7 @@ from curb.log import setup_logging
 import pdb
 
 
-def get_best_ML_tree(working_dir, raxml, alignment, orig_aln_name):
+def get_best_ML_tree(working_dir, raxml, alignment, orig_aln_name, searches=20):
     cmd = [
         raxml,
         "-m",
@@ -40,7 +40,7 @@ def get_best_ML_tree(working_dir, raxml, alignment, orig_aln_name):
         "-s",
         alignment,
         "-N",
-        str(5),
+        str(searches),
         "-n",
         "{}.BEST".format(orig_aln_name)
     ]
@@ -62,7 +62,7 @@ def cleanup_raxml_temp_files(working_dir, aln_name, postfix):
         [os.remove(f) for f in glob.glob(os.path.join(working_dir, name_stub))]
 
 
-def get_best_constraint_tree(working_dir, raxml, alignment, orig_aln_name, constraint):
+def get_best_constraint_tree(working_dir, raxml, alignment, orig_aln_name, constraint, searches=20):
     constraint_name, constraint_tree_pth = constraint
     cmd = [
         raxml,
@@ -75,7 +75,7 @@ def get_best_constraint_tree(working_dir, raxml, alignment, orig_aln_name, const
         "-s",
         alignment,
         "-N",
-        str(5),
+        str(searches),
         "-n",
         "{}.{}.constraint.BEST".format(orig_aln_name, constraint_name)
     ]

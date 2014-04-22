@@ -14,6 +14,7 @@ Created on 21 April 2014 20:48 PDT (-0700)
 
 from __future__ import absolute_import
 import os
+import re
 import sys
 import yaml
 import glob
@@ -127,7 +128,6 @@ def get_merged_constraint_trees(working_dir, orig_aln_name, best_constraint_tree
 
 
 def get_sh_test_results(working_dir, raxml, alignment, orig_aln_name, best_tree, merged_constraint):
-    pdb.set_trace()
     cmd = [
         raxml,
         "-f",
@@ -147,7 +147,24 @@ def get_sh_test_results(working_dir, raxml, alignment, orig_aln_name, best_tree,
     stdout, stderr = proc.communicate()
     sh_test_result = os.path.join(working_dir, "RAxML_info.{}.constraints.SHTEST".format(orig_aln_name))
     # return sh_test results
-    sh_test_result
+    return sh_test_result
+
+def filter_sh_test_results(sh_test, tree_map, orig_aln_name):
+    regex = re.compile("""
+        Tree:\s(\d+)\s              # capture tree num
+        Likelihood:\s(-\d+\.\d+)\s  # capture loglik
+        \\D\(LH\):\s(-\d+\.\d+)\s   # capture loglike Delta
+        SD:\s(\d+\.\d+)\s           # get SD
+        Significantly\sWorse\:\s+   # capture test values
+        (\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\)
+        """, re.VERBOSE)
+    with open(sh_test, 'rU') as infile:
+        temp_results = re.findall(regex, infile.read())
+    # add actual tree name to results
+    results = [(tree_map[int(i[0])],) + i[1:] for i in temp_results]
+    pdb.set_trace()
+    return orig_aln_name, results
+
 
 def worker(work):
     # get starting dir
@@ -192,13 +209,13 @@ def worker(work):
         )
         best_constraint_trees.append(best_constraint_tree)
     # get all constraint trees into one file
-    merged_constraint_trees, tree_map = get_merged_constraint_trees(
+    merged_constraint_trees, merged_constraint_tree_map = get_merged_constraint_trees(
         working_dir,
         orig_aln_name,
         best_constraint_trees
     )
     # run SH test of unconstrained against constrained
-    get_sh_test_results(
+    sh_test = get_sh_test_results(
         working_dir,
         raxml,
         working_alignment,
@@ -206,8 +223,14 @@ def worker(work):
         best_tree,
         merged_constraint_trees
     )
-    # output per-site liklihoods
+    sh_test_results = filter_sh_test_results(
+        sh_test,
+        merged_constraint_tree_map,
+        orig_aln_name
+    )
+    # output per-site likelihoods
     os.chdir(owd)
+    return sh_test_results
 
 
 def main(args):

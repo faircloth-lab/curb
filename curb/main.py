@@ -193,8 +193,7 @@ def get_all_merged_trees(working_dir, orig_aln_name, tree_map, best, merged_cons
     return all_tree_pth, tree_map
 
 
-def get_tree_puzzle(working_dir, raxml, alignment, orig_aln_name, all_tree_pth):
-    pdb.set_trace()
+def get_site_lls_tree_puzzle(working_dir, raxml, alignment, orig_aln_name, all_tree_pth):
     cmd = [
         raxml,
         "-f",
@@ -287,7 +286,7 @@ def worker(work):
         best_tree,
         merged_constraint_trees
     )
-    get_tree_puzzle(
+    get_site_lls_tree_puzzle(
         working_dir,
         raxml,
         working_alignment,
@@ -335,6 +334,7 @@ def main(args):
     work = [(args, raxml, alignment, config["constraints"]) for alignment in alignments]
     # start run
     sys.stdout.write("Running")
+    sys.stdout.flush()
     if args.cores > 1:
         assert args.cores <= multiprocessing.cpu_count(), "You've specified more cores than you have"
         pool = multiprocessing.Pool(args.cores)

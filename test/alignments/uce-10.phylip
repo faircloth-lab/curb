@@ -1,0 +1,198 @@
+ 32 283
+ameirus_natalis2               CAGCACCACC AAAGTTTTTA AGGACCCCCA GCGACCAAAC GGGAGTGCAA
+apteronotus_albifrons          CAGCACCGCC AAAGTTTCTG AGAACCCCCA ACGACCAAAC GGGAGTGCAA
+arius_felis                    CAGCACCGCC AAAGTTTTTA AGAACCCCCA GCGACCAAAC CGGAGTGCAA
+astynax_aeneus                 CAGCACCACC AAAGTTTTTA AGGACGCCCA ATGACCAAAC GGGCGTCCAA
+auchenoglanis_occidentalis     CAGCACCACC AAAGTTTTTA AGGACCCCCA GCGACCAAAC GGGAGTGCAA
+brachyhypopomus_occidentalis3  CAGCGCCGCC AAAGTTTTTA AGAACCCCCA ACGACCAGAT AGGAGTGCAA
+brycinus_macrolepidotus        CAGCTCCACC AAAGTTTTTA AGGACGCCCA ATGACCAGAC GGGCGTTCAA
+bryconaethiops_yseuxi          ???CTCCACC AAAGTTTTTA AGGACGCCCA ATGACCAGAC GGGCGTTCAA
+chirocentrus_dorab2            CAGCGCCGCC AAAGTTTTTA AGAACCCCCA ATGACCAAAC GGGTGTCCAG
+citharinus_gibbosus            ??????CACC AAAGTTTTTA AGAACACCCA ACGACCAGAC GGGCGTGCAA
+ctenolucius_beani              CAGCCCCACC AAAGTTTTTA AGAACGCCCA GTGACCAGAC GGGCGTGCAA
+cyrpinella_venusta             CAGCGCCACC AAAGTTCTTA AGAACACCGA ACGATCAGAC GGGTGTTCAG
+danRer7                        ?????????? ?????????? ?????????? ?????????? ???????CAG
+distichodus_hypostomatus       CAGCGCCACC AAAGTTTTTG AGGACGCCCA ACGACCAGAC GGGTGTCCAG
+dorosoma_pentense              CAGCACCACC AAAGTTTTTA AGAACCCCCA ACGACCAGAC GGGTGTTCAA
+gonorynchus_sp2                ?????????? ?????????? ?????????? ??GACCAAAC GGGAGTGCAG
+gymnotus_carapo                CAGCACCGCC AAAGTTTTTA CGAACCCCTA ACGACCAGAC GGGATTGCAA
+gymnotus_cylindricus           CAGCACCGCC AAAGTTTTTA CGAACCCCTA ACGACCAGAC GGGATTGCAA
+hepsetus_odoe2                 CAGCTCCACC AAAGTTTTTA AGGACGCCCA ATGACCAGAC GGGTGTGCAA
+hoplias_microlepis             CAGCCCCACC AAAGTTTCTA AGGACGCCCA ATGACCAGAC GGGTGTCCAG
+hyostomus_panamensis           CAGCGCCGCC AAAGTTTTTA AGGACCCCCA ACGATCAGAC GGGCGTCCAA
+malapterurus_stiassnyae        CAGCACCACC AAAGTTTTTA AGGACGCCCA GCGACCAAAC GGGAGTGCAA
+moxostoma_poecilurum           CAGCACCACC AAAGTTCTTA CGAACCCCTA ACGATCAAAC GGGTGTTCAG
+nannaethiops_unitaeniatus      CAGCACCACC AAAGTTTTTG CGGACGCCCA ACGACCAGAC GGGGGTTCAG
+oryLat2                        CAGCACCACC AAAGTTTTTA AGAACCCCCA ATGATCAAAC AGGCGTGCAG
+parakneria_abbreviata          CAGCTCCACC AAAGTTTCTG AGAACCCCTA ATGACCAAAC AGGAGTACAG
+phraectolaemus_ansorgii2       TAGCACCACC AAAGTTTTTA CGAACCCCCA ACGACCAAAC GGGAGTGCAG
+puntiopiles_falcifer2          ?????????? ?????????? ?????????? ?????????? ??????????
+sternopygus_macrurus           CAGTACCGCC AAAGTTTTTA CGGACCCCCA ACGACCAGAC GGGAGTGCAA
+synodontis_filamentosus        CAGCACCACC AAAGTTTTTA AGGACGCCCA GCGACCAAAC GGGAGTTCAA
+thryssa_hamiltonii2            CAGCTCCACC AAAGTTTACA CGAACCCCCA CTGATCAGAT CGGGGTGCAG
+xenocharax_crassus             CAGCACCGCC AAAGTTTTTA CGGACGCCCA ACGACCAGAC GGGCGTGCAG
+
+                               GGCGGCGTCG CTTCCTTCGT TTGCCAGGCC TCGGGTGACC CGCGGCCCAA
+                               GGGGGCGTGG CCTCCTTCAT CTGCCAGGCG TCGGGCGAGC CACGCCCCAA
+                               GGCGGCGTCG CATCCTTCGT TTGCCAGGCC TTGGGTGACC CGCGACCCAA
+                               GGTGGCGTCG CCTCCTTCAT CTGCCAGGCC ACGGGTGACC CGCGACCCAA
+                               GGCGGCGTCG CTTCCTTCGT TTGCCAGGCC ACGGGTGACC CGCGACCCAA
+                               GGAGGCGTGG CCTCTTTCAT CTGCCAGGCG TCGGGTGAAC CGCGCCCCAA
+                               GGTGGCGTCG CCTCCTTCAT CTGCCAGGCA ACGGGCGACC CACGACCCAA
+                               GGTGGCGTCG CCTCCTTCAT CTGCCAGGCC ACGGGCGACC CGCGACCCAA
+                               GGAGGAGTGG CGTCCTTCAT CTGCCAGGCC AACGGTGATC CCCGCCCTAA
+                               GGCGGCGTCG CCTCCTTCAT TTGCCAGGCC ACGGGCGACC CAAGACCCAA
+                               GGTGGTGTGG CCTCCTTCAT CTGCCAGGCC ACAGGCGACC CACGACCCAA
+                               GGCGGTGTTG CTTCCTTCAT CTGCCAGGCC ACAGGTGACC CACGGCCCAA
+                               GGCGGCGTGG CCTCCTTCAT CTGCCAGGCG TCCGGCGACC CGCGGCCCAA
+                               GGCGGCGTCG CCTCCTTCAT CTGCCAGGCC ACCGGCGACC CCAGGCCCAA
+                               GGAGGAGTGG CATCTTTCAT ATGCCAGGCA ACTGGTGATC CCCGACCCAA
+                               GGGGGCGTGG CCTCCTTCGT GTGCCAGGCC ACGGGCGACC CGCAGCCTAA
+                               GGGGGCGTGG CCTCCTTCAT CTGCCAGGCC TCGGGCGAAC CACGGCCCAA
+                               GGGGGCGTGG CCTCCTTCAT CTGCCAGGCC TCGGGCGAAC CACGGCCCAA
+                               GGTGGTGTCG CCTCCTTCAT CTGCCAGGCC ACAGGTGACC CGCGGCCCAA
+                               GGGGGAGTGG CCTCCTTCAT CTGCCAGGCC ACAGGTGACC CTCGACCCAA
+                               GGCGGCGTGG CCTCCTTCGT TTGCCAGGCC ACGGGCGACC CTCGACCCAA
+                               GGTGGCGTCG CGTCCTTCGT TTGCCAGGCT ACGGGTGACC CACGACCCAA
+                               GGCGGCGTTG CCTCCTTTAT CTGCCAGGCG ACGGGTGACC CGCGGCCCAA
+                               GGCGGCGTCG CCTCCTTCAT CTGCCAGGCC ACCGGCGACC CCAGGCCCAA
+                               GGAGGTGTGG CATCCTTCAT CTGCCAAGCC ACGGGAGACC CGCGGCCGAA
+                               GGTGGGGTGG CGTCATTCAT CTGCCAGGCC ACAGGAGACC CTCGGCCCAA
+                               GGCGGCGTGG CCTCCTTCAT CTGCCAGGCC ACCGGAGAGC CCCGTCCCAA
+                               ?????????? ???CCTTCAT CTGCCAGGCT ACGGGCGACC CGCGGCCCAA
+                               GGGGGCGTGG CCTCCTTCAT CTGCCAGGCG TCGGGCGAGC CACGTCCCAA
+                               GGTGGCGTTG CTTCCTTCGT TTGCCAGGCC ACGGGTGACC CGCGACCCAA
+                               GGGGGCGCAG CGTCCTTCGT GTGCCAGGCC AGTGGGGACC CACAGCCCAG
+                               GGCGGCGTCG CCTCCTTCAT CTGCCAGGCC ACAGGCGAGC CGCGACCCAA
+
+                               AATAGTTTGG AACAAGAAGG GGAAGCGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGCTTTGAGG
+                               AATTGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               AATTGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGCTTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               AATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATAGTCTGG AACAAGAAGG GGAAGAAAGT GAGCAACCAG AGATTTGAGG
+                               GATTGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGGTTTGAGG
+                               AATAGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               AATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGTTTTGAGG
+                               AATCGTGTGG AACAAGAAGG GGAAACGGGT CAGCAACCAG CGCTTTGAGG
+                               AATCGTCTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTCGAGG
+                               AATCGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTATGG AACAAGAAGG GGAAGCGAGT GAGCAACCAG AGATTTGAGG
+                               GATTGTGTGG AATAAGAAGG GGAAGAGAGT GAGCAACCAG CGGTTTGAGG
+                               GATTGTGTGG AATAAGAAGG GGAAGAGAGT GAGCAACCAG CGGTTTGAGG
+                               GATTGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATTGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT CAGCAACCAG AGATTTGAGG
+                               AATTGTTTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG AGATTTGAGG
+                               GATCGTATGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGCTTTGAGG
+                               AATCGTCTGG AACAAGAAGG GGAAGAGAGT CAGCAACCAG AGATTCGAGG
+                               GATTGTGTGG AACAAGAAGG GGAAGAAAGT CAGCAACCAG AGATTTGAGG
+                               GATCGTCTGG AATAAGAAGG GGAAACGAGT GAGCAACCAG AGATTCGAGG
+                               GATCGTCTGG AACAAGAAGG GGAAACGCGT CAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGTTTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAG CGATTTGAGG
+                               AATCGTTTGG AACAAGAAGG GGAAAAGAGT GAGCAACCAG AGATTTGAGG
+                               AATTGTTTGG AGCAAGAAGG GCAAGAAAGT TAGCAACCAG AGATTTGAGG
+                               GATCGTGTGG AACAAGAAGG GGAAGAGAGT GAGCAACCAT AGATTCGAGG
+
+                               T--ACGAGAG ATTTGGGATT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATCATGT GT------AT TATT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ACCAGGT GT------AC TTTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--AAAG??? ?????????? ?????????? ?????????? ??????????
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--AACA--- ---------- ---------- ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--------- --------AC TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+                               T--ACGAGGT GT------AT GCTC------ ---------- ----------
+                               TGAATTAGGT CT-------- ---------- ---------- ----------
+                               T--ATTAGGT CT------AT TGTT------ ---------- ----------
+
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ?????????? ?????????? ?????????? ?????????? ??????????
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+                               ---------- ---------- ---------- ---------- ----------
+
+                               ---------- ------CAGA TGTAAAAGGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------TGGA TGTCAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAACGT TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ?????????? ?????????? ?????????? ???
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ---------A ?????????? ???
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CGGA TGTAAAATGT TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------CTGA TGTAAAATGC TCG
+                               ---------- ------GAC? ?????????? ???
+                               ---------- ------TTCA TGGA?????? ???
+                               ---------- ------CTGA TGTAAAATGC TCG

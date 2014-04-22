@@ -12,3 +12,4 @@ Created on 21 April 2014 20:43 PDT (-0700)
 """
 
 from __future__ import absolute_import
+from curb.cli.main import main

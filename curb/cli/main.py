@@ -41,6 +41,12 @@ def get_args():
         help='The output directory for results.',
         action=core.CreateDir
     )
+    parser.add_argument(
+        '--cores',
+        type=int,
+        default=1,
+        help='The number of compute cores to use.',
+    )
     return parser.parse_args()
 
 

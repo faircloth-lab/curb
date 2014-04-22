@@ -22,6 +22,8 @@ import shutil
 import random
 import dendropy
 import subprocess
+import multiprocessing
+
 from curb import core
 from curb.log import setup_logging
 
@@ -162,8 +164,54 @@ def filter_sh_test_results(sh_test, tree_map, orig_aln_name):
         temp_results = re.findall(regex, infile.read())
     # add actual tree name to results
     results = [(tree_map[int(i[0])],) + i[1:] for i in temp_results]
-    pdb.set_trace()
     return orig_aln_name, results
+
+
+def get_all_merged_trees(working_dir, orig_aln_name, tree_map, best, merged_constraint_trees):
+    all_tree_pth = os.path.join(
+        working_dir,
+        "{}.ALL.MERGED.tre".format(orig_aln_name)
+    )
+    treelist = dendropy.TreeList()
+    # join merged
+    all_trees = [merged_constraint_trees, best]
+    for cnt, tree in enumerate(all_trees):
+        treelist.read_from_path(tree, schema="newick", preserve_underscores=True)
+    # we're inserting the best tree last in the all-merged tree file
+    # so add appropriate index
+    tree_map[max(tree_map.keys()) + 1] = best
+    # set branch lengths = 1
+    for tree in treelist:
+        for edge in tree.preorder_edge_iter():
+            if edge.length != 1.0:
+                edge.length = 1.0
+    treelist.write_to_path(
+        all_tree_pth,
+        "newick"
+    )
+    return all_tree_pth, tree_map
+
+
+def get_tree_puzzle(working_dir, raxml, alignment, orig_aln_name, all_tree_pth):
+    pdb.set_trace()
+    cmd = [
+        raxml,
+        "-f",
+        "G",
+        "-m",
+        "GTRGAMMA",
+        "-z",
+        all_tree_pth,
+        "-s",
+        alignment,
+        "-n",
+        "{}.sitelh".format(orig_aln_name)
+    ]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = proc.communicate()
+    puzzle_result = os.path.join(working_dir, "RAxML_info.{}.puzzle.SITELH".format(orig_aln_name))
+    # return sh_test results
+    return puzzle_result
 
 
 def worker(work):
@@ -228,8 +276,26 @@ def worker(work):
         merged_constraint_tree_map,
         orig_aln_name
     )
+    # prep a site likelihood file
+    all_tree_pth, all_tree_map = get_all_merged_trees(
+        working_dir,
+        orig_aln_name,
+        merged_constraint_tree_map,
+        best_tree,
+        merged_constraint_trees
+    )
+    get_tree_puzzle(
+        working_dir,
+        raxml,
+        working_alignment,
+        orig_aln_name,
+        all_tree_pth
+    )
     # output per-site likelihoods
     os.chdir(owd)
+    # write some progress indicator
+    sys.stdout.write(".")
+    sys.stdout.flush()
     return sh_test_results
 
 
@@ -264,4 +330,20 @@ def main(args):
         raise IOError("There are not alignments to use.")
     # package up alignments with other params
     work = [(args, raxml, alignment, config["constraints"]) for alignment in alignments]
-    map(worker, work)
+    # start run
+    sys.stdout.write("Running")
+    if args.cores > 1:
+        assert args.cores <= multiprocessing.cpu_count(), "You've specified more cores than you have"
+        pool = multiprocessing.Pool(args.cores)
+        results = pool.map(worker, work)
+        # close the pool.  so sad.
+        pool.close()
+    else:
+        results = map(worker, work)
+
+    pdb.set_trace()
+    print ""
+    # end
+    text = " Completed {} ".format(my_name)
+    log.info(text.center(65, "="))
+

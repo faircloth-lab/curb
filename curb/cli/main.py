@@ -47,6 +47,12 @@ def get_args():
         default=1,
         help='The number of compute cores to use.',
     )
+    parser.add_argument(
+        '--searches',
+        type=int,
+        default=20,
+        help='The number of RAxML search reps to use.',
+    )
     return parser.parse_args()
 
 

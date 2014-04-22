@@ -151,6 +151,7 @@ def get_sh_test_results(working_dir, raxml, alignment, orig_aln_name, best_tree,
     # return sh_test results
     return sh_test_result
 
+
 def filter_sh_test_results(sh_test, tree_map, orig_aln_name):
     regex = re.compile("""
         Tree:\s(\d+)\s              # capture tree num
@@ -234,7 +235,8 @@ def worker(work):
         working_dir,
         raxml,
         working_alignment,
-        orig_aln_name
+        orig_aln_name,
+        args.searches
     )
     # under each of the constraints, estimate the best constrained ML tree
     taxa_present = core.get_taxa_in_alignment(working_alignment)
@@ -253,7 +255,8 @@ def worker(work):
             raxml,
             working_alignment,
             orig_aln_name,
-            constraint
+            constraint,
+            args.searches
         )
         best_constraint_trees.append(best_constraint_tree)
     # get all constraint trees into one file
@@ -340,7 +343,6 @@ def main(args):
         pool.close()
     else:
         results = map(worker, work)
-
     pdb.set_trace()
     print ""
     # end

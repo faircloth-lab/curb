@@ -35,14 +35,12 @@ def get_args():
         action=core.FullPaths,
         type=core.is_dir
     )
-    '''
     parser.add_argument(
-        '--alignments',
+        '--output',
         required=True,
-        help='The output directory of clean reads to create.',
+        help='The output directory for results.',
         action=core.CreateDir
     )
-    '''
     return parser.parse_args()
 
 

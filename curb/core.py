@@ -106,10 +106,16 @@ def satisfy_one_taxon_group(taxa_in_align, taxon_group):
     else:
         return False
 
-def satisfy_all_taxon_groups(alignment, taxon_groups):
-    """given an input alignment, see if any taxa in list are in file"""
+
+def get_taxa_in_alignment(alignment):
     aln = AlignIO.read(alignment, "phylip-relaxed")
     taxa_in_align = set([taxon.id for taxon in aln])
+    return taxa_in_align
+
+
+def satisfy_all_taxon_groups(alignment, taxon_groups):
+    """given an input alignment, see if any taxa in list are in file"""
+    taxa_in_align = get_taxa_in_alignment(alignment)
     taxa_present = []
     for group_name, taxon_group in taxon_groups.iteritems():
         if satisfy_one_taxon_group(taxa_in_align, taxon_group):

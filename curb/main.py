@@ -303,8 +303,8 @@ def worker(work):
 
 
 def create_results_database(args, log):
-    """Create the UCE-match database"""
-    log.info("Creating the UCE-match database")
+    """Create the results database"""
+    log.info("Creating the SH-test results database")
     db_pth = os.path.join(args.output, "sh_test_results.sqlite")
     conn = sqlite3.connect(db_pth)
     c = conn.cursor()

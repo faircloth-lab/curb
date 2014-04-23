@@ -28,7 +28,7 @@ import multiprocessing
 from curb import core
 from curb.log import setup_logging
 
-import pdb
+#import pdb
 
 
 def get_best_ML_tree(working_dir, raxml, alignment, orig_aln_name, searches=20):
@@ -300,6 +300,7 @@ def worker(work):
     sys.stdout.write(".")
     sys.stdout.flush()
     return sh_test_results
+
 
 def create_results_database(args, log):
     """Create the UCE-match database"""

@@ -20,6 +20,7 @@ import yaml
 import glob
 import shutil
 import random
+import sqlite3
 import dendropy
 import subprocess
 import multiprocessing
@@ -156,7 +157,7 @@ def filter_sh_test_results(sh_test, tree_map, orig_aln_name):
     regex = re.compile("""
         Tree:\s(\d+)\s              # capture tree num
         Likelihood:\s(-\d+\.\d+)\s  # capture loglik
-        \\D\(LH\):\s(-\d+\.\d+)\s   # capture loglike Delta
+        \\D\(LH\):\s(-*\d+\.\d+)\s   # capture loglike Delta
         SD:\s(\d+\.\d+)\s           # get SD
         Significantly\sWorse\:\s+   # capture test values
         (\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\)
@@ -300,6 +301,44 @@ def worker(work):
     sys.stdout.flush()
     return sh_test_results
 
+def create_results_database(args, log):
+    """Create the UCE-match database"""
+    log.info("Creating the UCE-match database")
+    db_pth = os.path.join(args.output, "sh_test_results.sqlite")
+    conn = sqlite3.connect(db_pth)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    try:
+        query = """CREATE TABLE results (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            locus text,
+            tree text,
+            ll float,
+            ll_delta float,
+            sd float,
+            worse_five text,
+            worse_five_percent int,
+            worse_two text,
+            worse_two_percent int,
+            worse_one text,
+            worse_one_percent int
+            )
+            """
+        c.execute(query)
+    except sqlite3.OperationalError, e:
+        log.critical("Database already exists")
+        if e[0] == 'table results already exists':
+            answer = raw_input("Database already exists.  Overwrite [Y/n]? ")
+            if answer == "Y" or "YES":
+                os.remove(db_pth)
+                conn, c = create_results_database(args, log)
+            else:
+                sys.exit(2)
+        else:
+            log.critical("Cannot create database")
+            raise sqlite3.OperationalError("Cannot create database")
+    return conn, c
+
 
 def main(args):
     # setup logging
@@ -343,7 +382,30 @@ def main(args):
         pool.close()
     else:
         results = map(worker, work)
-    pdb.set_trace()
+    # create db to hold results
+    conn, cur = create_results_database(args, log)
+    # enter results to db
+    for locus, sh_tests in results:
+        for sh_test in sh_tests:
+            test_name = os.path.basename(sh_test[0]).split('.')[-3]
+            query = """INSERT INTO results (
+                locus,
+                tree,
+                ll,
+                ll_delta,
+                sd,
+                worse_five,
+                worse_five_percent,
+                worse_two,
+                worse_two_percent,
+                worse_one,
+                worse_one_percent
+                ) VALUES (?,?,?,?,?,?,?,?,?,?,?)"""
+            cur.execute(query, (locus, test_name,) + sh_test[1:])
+    conn.commit()
+    cur.close()
+    conn.close()
+    # ----------------------
     print ""
     # end
     text = " Completed {} ".format(my_name)

@@ -294,7 +294,7 @@ def worker(work):
         orig_aln_name,
         all_tree_pth
     )
-    # output per-site likelihoods
+    # go back to cwd we started in
     os.chdir(owd)
     # write some progress indicator
     sys.stdout.write(".")

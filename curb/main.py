@@ -160,7 +160,7 @@ def filter_sh_test_results(sh_test, tree_map, orig_aln_name):
         \\D\(LH\):\s(-*\d+\.\d+)\s   # capture loglike Delta
         SD:\s(\d+\.\d+)\s           # get SD
         Significantly\sWorse\:\s+   # capture test values
-        (\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\),\s+(\w+)\s\((\d+)\%\)
+        (\w+)\s\(\d+\%\),\s+(\w+)\s\(\d+\%\),\s+(\w+)\s\(\d+\%\)
         """, re.VERBOSE)
     with open(sh_test, 'rU') as infile:
         temp_results = re.findall(regex, infile.read())
@@ -317,11 +317,8 @@ def create_results_database(args, log):
             ll_delta float,
             sd float,
             worse_five text,
-            worse_five_percent int,
             worse_two text,
-            worse_two_percent int,
-            worse_one text,
-            worse_one_percent int
+            worse_one text
             )
             """
         c.execute(query)
@@ -395,18 +392,14 @@ def main(args):
                 ll_delta,
                 sd,
                 worse_five,
-                worse_five_percent,
                 worse_two,
-                worse_two_percent,
-                worse_one,
-                worse_one_percent
-                ) VALUES (?,?,?,?,?,?,?,?,?,?,?)"""
+                worse_one
+                ) VALUES (?,?,?,?,?,?,?,?)"""
             cur.execute(query, (locus, test_name,) + sh_test[1:])
     conn.commit()
     cur.close()
     conn.close()
     # ----------------------
-    print ""
     # end
     text = " Completed {} ".format(my_name)
     log.info(text.center(65, "="))
